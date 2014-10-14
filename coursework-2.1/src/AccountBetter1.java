@@ -5,13 +5,22 @@ public class AccountBetter1 extends Account implements Transfer {
 
     @Override
     public boolean transferFrom(Account from, double amount) {
-        from.withdraw(amount);
-        return true;
+        if (amount > 1)
+        {
+            from.withdraw(amount);
+            this.deposit(amount);
+            return true;
+        }
+        return false;
     }
 
     @Override
     public boolean transferTo(Account to, double amount) {
-        to.deposit(amount);
+        if (amount > 1) {
+            to.deposit(amount);
+            this.withdraw(amount);
+            return true;
+        }
         return false;
     }
 }

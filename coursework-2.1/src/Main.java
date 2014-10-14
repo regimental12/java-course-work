@@ -2,26 +2,26 @@ class Main
 {
     public static void main( String args[] )
     {
-        Account mike    = new Account();
-        Account corinna = new Account();
+        AccountBetter1 mike = new AccountBetter1();
+        AccountBetter1 cori = new AccountBetter1();
+        Account miri = new Account();
 
-        double obtained;
 
-        System.out.printf( "Mike's Balance      = %6.2f\n",
-                mike.getBalance() );
 
-        mike.deposit(100.00);
-        System.out.printf( "Mike's Balance      = %6.2f\n",
-                mike.getBalance() );
 
-        obtained = mike.withdraw(20.00);
-        System.out.printf( "Mike has withdrawn  : %6.2f\n", obtained );
-        System.out.printf( "Mike's Balance      = %6.2f\n",
-                mike.getBalance() );
+        mike.deposit( 1.00);
+        cori.deposit( 150.00 );
+        miri.deposit( 100.00 );
 
-        corinna.deposit(50.00);
-        System.out.printf( "Corinna's Balance   = %6.2f\n",
-                corinna.getBalance() );
+//Transfer 10.00 from miri's account to mike's account
+       mike.transferTo(cori , 1.00);
+
+//Transfer 10.00 from mike's account to cori's account
+
+
+        System.out.printf( "Mike = %5.2f\n", mike.getBalance() );
+        System.out.printf( "Miri = %5.2f\n", miri.getBalance() );
+        System.out.printf( "Cori = %5.2f\n", cori.getBalance() );
     }
 
 }
